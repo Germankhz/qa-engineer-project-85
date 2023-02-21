@@ -1,0 +1,208 @@
+---
+- summary: |
+   Проверка возможности зарегистрировать нового пользователя 
+  requirement: |
+    Возможность зарегистрировать нового пользователя
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: |
+    Nickname = user01
+    Email = test_email@smile.ru
+    Password = 123456789
+  steps:
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password
+    - Нажать кнопку «Submit»
+  expected-result: |
+    Происходит редирект в ЛК вновь созданного пользователя
+    
+- summary: |
+   Проверка возможность авторизации с помощью email и password 
+  requirement: |
+    Возможность авторизации с помощью email и password
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Ввести Email
+    - Ввести Password
+    - Нажать кнопку «Submit»
+  expected-result: |
+    Происходит редирект в ЛК пользователя
+
+- summary: |
+   Проверка возможности просмотреть список активных игр в lobby 
+  requirement: |
+    Возможность просмотреть список активных игр в lobby
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#lobby
+  expected-result: |
+    На странице приложения отображается список активных игр
+    
+- summary: |
+   Проверка возможности просмотреть список турниров 
+  requirement: |
+    Возможность просмотреть список турниров
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#tournaments
+  expected-result: |
+    На странице приложения отображается список турниров
+    
+- summary: |
+   Проверка отображения активных турниров в списке турниров 
+  requirement: |
+    В списке турниров отображаются активные турниры
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#tournaments
+  expected-result: |
+    На странице приложения в верхрней части таблицы отображается список активных турниров
+    
+- summary: |
+   Проверка отображения завершенных турниров в списке турниров 
+  requirement: |
+   В списке турниров отображаются завершенные турниры
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#tournaments
+  expected-result: |
+    На странице приложения отдельно отображается список активных турниров
+    
+- summary: |
+   Проверка возможности просмотреть список завершенных игр 
+  requirement: |
+   Возможность просмотреть список завершенных игр
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#completedGames
+  expected-result: |
+    На странице приложения отображается список завершенных игр
+    
+- summary: |
+   Проверка возможности вызвать форму для создания новой игры 
+  requirement: |
+   Возможность вызвать форму для создания новой игры
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#lobby
+    - Нажать кнопку CREATE A GAME
+  expected-result: |
+    Отображается всплывающее окно Create a game
+    
+- summary: |
+   Проверка возможности выбрать уровень сложности в форме создания новой игры 
+  requirement: |
+   Возможность выбрать уровень сложности в форме создания новой игры
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#lobby
+    - Нажать кнопку CREATE A GAME
+  expected-result: |
+    Во всплывающем окне отображается пункт Level с возможными вариантами сложности игры
+    
+- summary: |
+   Проверка возможности выбрать тип игры в форме создания новой игры 
+  requirement: |
+   Возможность выбрать тип игры в форме создания новой игры
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#lobby
+    - Нажать кнопку CREATE A GAME
+  expected-result: |
+    Во всплывающем окне отображается пункт Game Type с возможными вариантами типов игры
+    
+- summary: |
+   Проверка возможности задать длительность игры в форме создания новой игры 
+  requirement: |
+   Возможность задать длительность игры в форме создания новой игры
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#lobby
+    - Нажать кнопку CREATE A GAME
+  expected-result: |
+    Во всплывающем окне отображается пункт Time control с возможностью задать длительность игры
+    
+- summary: |
+   Проверка возможности выбрать игру по имени в форме создания новой игры 
+  requirement: |
+   Возможность выбрать игру по имени в форме создания новой игры
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#lobby
+    - Нажать кнопку CREATE A GAME
+  expected-result: |
+    Во всплывающем окне отображается пункт Choose task by name or tags с возможностью выбрать игру согласно её имени в списке
+    
+- summary: |
+   Проверка возможности создать новую игру, заполнив форму для создания новой игры 
+  requirement: |
+   Возможность создать новую игру, заполнив форму для создания новой игры
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#lobby
+    - Нажать кнопку CREATE A GAME
+    - Нажать кнопку Create Battle
+  expected-result: |
+    Во вкладке LOBBY отображается вновь созданная игра от имени текущего пользователя
+    
+
+
+
+
+
+
+
+    
+    
+    
+    
