@@ -218,6 +218,29 @@
     - Кликнуть Save
   expected-result: |
     В списке Task packs отображается созданный Task pack
+
+- summary: |
+    Проверка сообщения об ошибке при вводе недопустимых символов в поле Task_ids формы создания нового Task pack 
+  requirement: |
+    Выводить сообщение об ошибке при вводе недопустимых символов в поле Task_ids формы создания нового Task pack
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+    Name = test
+    Task_ids = test
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#lobby
+    - Кликнуть аватар пользователя
+    - В выпадающем меню выбрать Tasks
+    - Кликнуть Task packs
+    - Кликнуть Create new task pack
+    - Заполнить поле Name
+    - Заполнить поле Task_ids
+    - Кликнуть Save
+  expected-result: |
+    Рядом с полем Task_ids появляется всплывающая подсказка, что поле заполнено неверно
     
 - summary: |
     Проверка дефолтной аватарки для пользователей без фото
