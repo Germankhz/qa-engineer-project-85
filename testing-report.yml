@@ -52,6 +52,10 @@
   status: pass
 
 - summary: |
+    Возможность создать новый Task pack
+  status: fail
+
+- summary: |
     Отображается изображение с логотипом CodeBattle в профиле пользователя без фотографии
   status: pass
 
