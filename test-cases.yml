@@ -194,6 +194,30 @@
     - Нажать кнопку Create Battle
   expected-result: |
     Новая игра создана
+
+- summary: |
+    Проверка создания нового Task pack 
+  requirement: |
+    Возможность создать новый Task pack
+  prerequisites: |
+    Произведена авторизация пользователя в приложении
+  test-data: |
+    Email = testmail@mail.ru
+    Password = 123456789
+    Name = test
+    Task_ids = 1,2,3
+  steps:
+    - Открыть страницу https://codebattle.hexlet.io/#lobby
+    - Кликнуть аватар пользователя
+    - В выпадающем меню выбрать Tasks
+    - Кликнуть Task packs
+    - Кликнуть Create new task pack
+    - Заполнить поле Name
+    - В поле Visibility выбрать Public
+    - Заполнить поле Task_ids
+    - Кликнуть Save
+  expected-result: |
+    В списке Task packs отображается созданный Task pack
     
 - summary: |
     Проверка дефолтной аватарки для пользователей без фото
